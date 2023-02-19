@@ -1,4 +1,48 @@
 ﻿@page
 @model Book_Review_UI.Pages.Identity.RegisterModel
-@{
-}
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary p-lg-3">Register Account</h2>
+            <br/>
+            
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <span asp-validation-for="register.FirstName" class="text-danger"></span>
+            <label asp-for="@Model.register.FirstName"></label>
+            <input asp-for="register.FirstName" class="form-control"/>
+        </div>
+        <div class="mb-3">
+            <span asp-validation-for="register.LastName" class="text-danger"></span>
+            <label asp-for="@Model.register.LastName"></label>
+            <input asp-for="register.LastName" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <span asp-validation-for="register.UserName" class="text-danger"></span>
+            <label asp-for="@Model.register.UserName"></label>
+            <input asp-for="register.UserName" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <span asp-validation-for="register.Email" class="text-danger"></span>
+            <label asp-for="@Model.register.Email"></label>
+            <input asp-for="register.Email" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <span asp-validation-for="register.PhoneNumber" class="text-danger"></span>
+            <label asp-for="@Model.register.PhoneNumber"></label>
+            <input asp-for="register.PhoneNumber" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <span asp-validation-for="register.Password" class="text-danger"></span>
+            <label asp-for="@Model.register.Password"></label>
+            <input asp-for="register.Password" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <span asp-validation-for="register.ConfirmPassword" class="text-danger"></span>
+            <label asp-for="@Model.register.ConfirmPassword"></label>
+            <input asp-for="register.ConfirmPassword" class="form-control" />
+        </div>
+    </div>
+
+</form>

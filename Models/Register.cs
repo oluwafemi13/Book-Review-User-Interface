@@ -18,7 +18,7 @@ namespace Book_Review_UI.Models
         public string ConfirmPassword { get; set; }
         public string UserName { get; set; }
 
-        public Roles role { get; set; }
+       // public Roles role { get; set; }
 
     }
 
