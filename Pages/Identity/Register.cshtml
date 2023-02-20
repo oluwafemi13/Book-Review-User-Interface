@@ -8,6 +8,10 @@
             
         </div>
         <div asp-validation-summary="All"></div>
+        <ul>
+            @foreach(var item in )
+        </ul>
+
         <div class="mb-3">
             <span asp-validation-for="register.FirstName" class="text-danger"></span>
             <label asp-for="@Model.register.FirstName"></label>
@@ -45,4 +49,9 @@
         </div>
     </div>
 
+    <button type="submit">Register</button>
+
+    <div>
+        <p>Already Have an Account? <a asp-page="Login">Sign In</a></p>
+    </div>
 </form>
