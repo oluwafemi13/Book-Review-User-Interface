@@ -13,16 +13,17 @@ namespace Book_Review_UI.Models
         [StringLength(11)]
         [Display(Name =  "Phone Number")]
         public string PhoneNumber { get; set; }
+
         [Required]
         [DataType(DataType.Password)]
         [Compare("Password")]
         [Display(Name ="Confirm Password")]
         public string ConfirmPassword { get; set; }
+
         [Required]
-        
         public string UserName { get; set; }
 
-        public IEnumerable<Roles> role { get; set; }
+        public string Role { get; set; }
 
     }
 
