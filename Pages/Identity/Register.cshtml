@@ -47,6 +47,11 @@
             <label asp-for="@Model.register.ConfirmPassword"></label>
             <input asp-for="register.ConfirmPassword" class="form-control" />
         </div>
+        <div class="mb-3">
+            <span asp-validation-for="register.roles" class="text-danger"></span>
+            <label asp-for="@Model.register.roles"></label>
+            <input asp-for="register.roles" class="form-control" />
+        </div>
     </div>
 
     <button type="submit">Register</button>
