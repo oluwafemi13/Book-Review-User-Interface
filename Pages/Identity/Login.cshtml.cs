@@ -8,10 +8,30 @@ namespace Book_Review_UI.Pages.Identity
 {
     public class LoginModel : PageModel
     {
-
+        [BindProperty]
         public Login login { get; set; }
-        public void OnGet()
+       // public string Code { get; set; }
+        public void OnGet(string code = null)
         {
+           // code = Code?? throw new ArgumentNullException(nameof(code));
+        }
+
+        public async Task<IActionResult> OnPost()
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var client = new HttpClient();
+                    client.BaseAddress =new Uri( "https://api20230317153411.azurewebsites.net/api/Authentication/login");
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return Page();
         }
     }
 }

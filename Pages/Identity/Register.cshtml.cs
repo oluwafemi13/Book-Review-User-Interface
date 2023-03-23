@@ -62,10 +62,11 @@ namespace Book_Review_UI.Pages.Identity
                     }
                     else
                     {
+                        ModelState.AddModelError("", "Please Input All fields");
                         return Page();
                     }
                 }
-                ModelState.AddModelError("", "Please Input All fields");
+                
 
             }
             catch (Exception)
