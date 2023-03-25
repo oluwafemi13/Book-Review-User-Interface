@@ -1,52 +1,19 @@
 ﻿@page
 @model Book_Review_UI.Pages.Identity.LoginModel
-<style>
-    html,
-    body {
-        height: 100%;
-    }
 
-    body {
-        display: flex;
-        align-items: center;
-        padding-top: 40px;
-        padding-bottom: 40px;
-        background-color: #f5f5f5;
-    }
-
-    .form-signin {
-        max-width: 330px;
-        padding: 15px;
-    }
-
-        .form-signin .form-floating:focus-within {
-            z-index: 2;
-        }
-
-        .form-signin input[type="email"] {
-            margin-bottom: -1px;
-            border-bottom-right-radius: 0;
-            border-bottom-left-radius: 0;
-        }
-
-        .form-signin input[type="password"] {
-            margin-bottom: 10px;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-        }
-
-    </style>
-
-<form method="post">
+<form method="post" class="sign-in-form">
+    <div asp-validation-summary="All"></div>
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
     <div class="form-floating form-signin">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <input type="email" class="form-control" asp-for="login.Email" placeholder="name@example.com">
         <label for="floatingInput">Email address</label>
+        <span asp-validation-for="@Model.login.Email"></span>
     </div>
     <div class="form-floating form-signin">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <input type="password" class="form-control" asp-for="login.Password" placeholder="Password">
         <label for="floatingPassword">Password</label>
+        <span asp-validation-for="@Model.login.Password"></span>
     </div>
 
     <div class="checkbox mb-3">
