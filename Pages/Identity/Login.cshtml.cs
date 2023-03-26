@@ -17,6 +17,7 @@ namespace Book_Review_UI.Pages.Identity
         public string Code { get; set; }
         public void OnGet(string code)
         {
+            
            // code = Code?? throw new ArgumentNullException(nameof(code));
         }
 
@@ -24,11 +25,11 @@ namespace Book_Review_UI.Pages.Identity
         {
             try
             {
+                var client = new HttpClient();
+                client.BaseAddress = new Uri("https://api20230317153411.azurewebsites.net/");
+
                 if (ModelState.IsValid)
                 {
-                    var client = new HttpClient();
-                    client.BaseAddress = new Uri("https://api20230317153411.azurewebsites.net/");
-
                     var json = JsonSerializer.Serialize(login);
                     var content = new StringContent(json, Encoding.UTF8, "application/json");
 
@@ -36,7 +37,6 @@ namespace Book_Review_UI.Pages.Identity
                     {
                         PropertyNameCaseInsensitive = true
                     };
-
                     var response = client.PostAsync("api/Authentication/login", content).Result;
                     if (response.IsSuccessStatusCode)
                     {
