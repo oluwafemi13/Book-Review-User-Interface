@@ -53,6 +53,7 @@ namespace Book_Review_UI.Pages.Identity
                     var response = client.PostAsync("api/Authentication/Register", content).Result;
                     if (response.IsSuccessStatusCode)
                     {
+                        TempData["success"] = "Registration Successful";
                         var responseContent = response.Content.ReadAsStringAsync().Result;
 
                        
